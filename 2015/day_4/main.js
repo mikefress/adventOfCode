@@ -2,13 +2,14 @@ import crypto from 'crypto'
 
 
 const input = 'yzbqklnj'
-let inputNum = 282749
+// let inputNum = 282749
+let inputNum = 0
 
 let md5 = crypto.createHash('md5').update(`${input}${inputNum}`).digest('hex')
 
 
-while (md5.slice(0,6) !== '000000') {
-  console.log(md5.slice(0,6))
+while (md5.slice(0,5) !== '00000') {
+  console.log(inputNum)
   md5 = crypto.createHash('md5').update(`${input}${inputNum}`).digest('hex')
   inputNum += 1
 }
